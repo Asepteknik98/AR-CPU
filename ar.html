@@ -6,153 +6,139 @@
     <title>AR CPU - Augmented Reality View</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="libs/aframe.min.js"></script>
-    <script src="libs/arjs.min.js"></script>
+    <!-- A-Frame from CDN -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <!-- AR.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@3/aframe/aframe-ar.min.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
     
     <!-- AR Scene -->
     <a-scene 
         embedded 
-        arjs="detectionMode: mono; debugUIEnabled: false; sourceType: webcam; patternRatio: 0.8;" 
+        arjs="detectionMode: mono; debugUIEnabled: true; sourceType: webcam; patternRatio: 0.8;" 
         id="arScene"
         vr-mode-ui="enabled: false">
         
         <!-- Camera -->
-        <a-camera position="0 0 0" look-controls wasd-controls="fly: true"></a-camera>
+        <a-camera position="0 0 0"></a-camera>
 
-        <!-- Marker -->
-        <a-marker 
-            preset="custom" 
-            type="pattern" 
-            url="marker/marker.patt"
-            raycaster="objects: .clickable"
-            emitevents="true"
-            id="markerA">
+        <!-- Marker - HIRO Preset (Tested & Working) -->
+        <a-marker preset="hiro" id="marker">
             
-            <!-- Group untuk semua komponen -->
-            <a-entity id="componentsGroup" position="0 0 0">
-                
-                <!-- Motherboard -->
-                <a-entity 
-                    id="motherboard"
-                    gltf-model="assets/motherboard.glb"
-                    position="0 0 0"
-                    scale="1 1 1"
-                    rotation="0 0 0"
-                    class="clickable component"
-                    data-name="Motherboard"
-                    data-desc="Papan sirkuit utama yang menghubungkan semua komponen">
-                </a-entity>
+            <!-- Motherboard (Box sederhana) -->
+            <a-box 
+                id="motherboard"
+                position="0 0 0"
+                scale="1.5 0.3 1.5"
+                color="#FF6B9D"
+                class="clickable component"
+                data-name="Motherboard"
+                data-desc="Papan sirkuit utama yang menghubungkan semua komponen">
+            </a-box>
 
-                <!-- Processor -->
-                <a-entity 
-                    id="processor"
-                    gltf-model="assets/processor.glb"
-                    position="0 0.3 -0.5"
-                    scale="0.8 0.8 0.8"
-                    rotation="0 0 0"
-                    class="clickable component"
-                    data-name="CPU (Processor)"
-                    data-desc="Otak komputer yang menjalankan semua instruksi">
-                </a-entity>
+            <!-- Processor (Cylinder) -->
+            <a-cylinder 
+                id="processor"
+                position="0 0.5 0"
+                radius="0.3"
+                height="0.2"
+                color="#00A8FF"
+                class="clickable component"
+                data-name="CPU (Processor)"
+                data-desc="Otak komputer yang menjalankan semua instruksi">
+            </a-cylinder>
 
-                <!-- RAM -->
-                <a-entity 
-                    id="ram"
-                    gltf-model="assets/ram.glb"
-                    position="-0.3 0.25 0.3"
-                    scale="0.7 0.7 0.7"
-                    rotation="0 0 0"
-                    class="clickable component"
-                    data-name="RAM"
-                    data-desc="Memori akses cepat untuk proses berjalan">
-                </a-entity>
+            <!-- RAM (Box kecil 1) -->
+            <a-box 
+                id="ram"
+                position="-0.6 0.5 0"
+                scale="0.3 0.8 0.2"
+                color="#4CAF50"
+                class="clickable component"
+                data-name="RAM"
+                data-desc="Memori akses cepat untuk proses berjalan">
+            </a-box>
 
-                <!-- GPU/VGA -->
-                <a-entity 
-                    id="gpu"
-                    gltf-model="assets/vga.glb"
-                    position="0.3 0.25 0.3"
-                    scale="0.6 0.6 0.6"
-                    rotation="0 0 0"
-                    class="clickable component"
-                    data-name="GPU (VGA Card)"
-                    data-desc="Kartu grafis untuk rendering visual dan gaming">
-                </a-entity>
+            <!-- GPU (Box kecil 2) -->
+            <a-box 
+                id="gpu"
+                position="0.6 0.5 0"
+                scale="0.3 0.8 0.2"
+                color="#FFC300"
+                class="clickable component"
+                data-name="GPU (VGA Card)"
+                data-desc="Kartu grafis untuk rendering visual dan gaming">
+            </a-box>
 
-                <!-- Power Supply -->
-                <a-entity 
-                    id="psu"
-                    gltf-model="assets/psu.glb"
-                    position="0 -0.3 0.2"
-                    scale="0.5 0.5 0.5"
-                    rotation="0 0 0"
-                    class="clickable component"
-                    data-name="PSU (Power Supply)"
-                    data-desc="Menyediakan tenaga listrik untuk semua komponen">
-                </a-entity>
+            <!-- PSU (Sphere) -->
+            <a-sphere 
+                id="psu"
+                position="0 0.3 -0.8"
+                radius="0.4"
+                color="#9C27B0"
+                class="clickable component"
+                data-name="PSU (Power Supply)"
+                data-desc="Menyediakan tenaga listrik untuk semua komponen">
+            </a-sphere>
 
-                <!-- SSD -->
-                <a-entity 
-                    id="ssd"
-                    gltf-model="assets/ssd.glb"
-                    position="-0.4 0.1 -0.2"
-                    scale="0.5 0.5 0.5"
-                    rotation="0 0 0"
-                    class="clickable component"
-                    data-name="SSD Storage"
-                    data-desc="Penyimpanan cepat untuk sistem dan data">
-                </a-entity>
+            <!-- SSD Storage (Box) -->
+            <a-box 
+                id="ssd"
+                position="-0.6 0.3 0.8"
+                scale="0.3 0.2 0.5"
+                color="#FF5722"
+                class="clickable component"
+                data-name="SSD Storage"
+                data-desc="Penyimpanan cepat untuk sistem dan data">
+            </a-box>
 
-                <!-- HDD -->
-                <a-entity 
-                    id="hdd"
-                    gltf-model="assets/hdd.glb"
-                    position="0.4 0.1 -0.2"
-                    scale="0.5 0.5 0.5"
-                    rotation="0 0 0"
-                    class="clickable component"
-                    data-name="HDD Storage"
-                    data-desc="Penyimpanan kapasitas besar dengan kecepatan lebih lambat">
-                </a-entity>
+            <!-- HDD Storage (Box) -->
+            <a-box 
+                id="hdd"
+                position="0.6 0.3 0.8"
+                scale="0.3 0.2 0.5"
+                color="#F44336"
+                class="clickable component"
+                data-name="HDD Storage"
+                data-desc="Penyimpanan kapasitas besar dengan kecepatan lebih lambat">
+            </a-box>
 
-                <!-- Heatsink/Fan -->
-                <a-entity 
-                    id="heatsink"
-                    gltf-model="assets/heatsink_fan.glb"
-                    position="0 0.5 0"
-                    scale="0.7 0.7 0.7"
-                    rotation="0 0 0"
-                    class="clickable component"
-                    data-name="Heatsink & Fan"
-                    data-desc="Sistem pendingin untuk CPU dan GPU">
-                </a-entity>
+            <!-- Heatsink (Cone) -->
+            <a-cone 
+                id="heatsink"
+                position="0 1.2 0"
+                radius-bottom="0.5"
+                radius-top="0"
+                height="0.8"
+                color="#2196F3"
+                class="clickable component"
+                data-name="Heatsink & Fan"
+                data-desc="Sistem pendingin untuk CPU dan GPU">
+            </a-cone>
 
-                <!-- CPU Socket -->
-                <a-entity 
-                    id="cpuSocket"
-                    gltf-model="assets/cpu_socket.glb"
-                    position="0 -0.1 0.1"
-                    scale="0.6 0.6 0.6"
-                    rotation="0 0 0"
-                    class="clickable component"
-                    data-name="CPU Socket"
-                    data-desc="Socket penempatan untuk prosesor">
-                </a-entity>
+            <!-- CPU Socket (Torus) -->
+            <a-torus 
+                id="cpuSocket"
+                position="-0.3 0.2 -0.5"
+                radius="0.4"
+                radius-tubular="0.1"
+                color="#E91E63"
+                class="clickable component"
+                data-name="CPU Socket"
+                data-desc="Socket penempatan untuk prosesor">
+            </a-torus>
 
-                <!-- Chipset -->
-                <a-entity 
-                    id="chipset"
-                    gltf-model="assets/chipset.glb"
-                    position="-0.2 -0.2 0.2"
-                    scale="0.5 0.5 0.5"
-                    rotation="0 0 0"
-                    class="clickable component"
-                    data-name="Chipset"
-                    data-desc="Mengatur komunikasi antara CPU dan perangkat lainnya">
-                </a-entity>
-            </a-entity>
+            <!-- Chipset (Dodecahedron) -->
+            <a-dodecahedron 
+                id="chipset"
+                position="0.3 0.2 -0.5"
+                radius="0.3"
+                color="#673AB7"
+                class="clickable component"
+                data-name="Chipset"
+                data-desc="Mengatur komunikasi antara CPU dan perangkat lainnya">
+            </a-dodecahedron>
 
         </a-marker>
 
@@ -216,9 +202,22 @@
     <div class="instruction-panel">
         <div class="instruction-content">
             <i class="fas fa-lightbulb"></i>
-            <p>Arahkan kamera ke marker untuk melihat komponen 3D</p>
+            <p><strong>📍 Gunakan HIRO Marker!</strong> Download atau cetak marker dari link di bawah</p>
             <button id="dismissInstruction" class="btn-dismiss">Mengerti</button>
         </div>
+    </div>
+
+    <!-- Debugging Panel -->
+    <div style="position: fixed; top: 80px; left: 20px; background: rgba(0,0,0,0.8); color: #00FF00; padding: 12px; border-radius: 8px; font-size: 12px; z-index: 99; max-width: 280px; font-family: monospace; border: 2px solid #00FF00;">
+        <p style="margin: 0 0 8px 0;"><strong>⚙️ DEBUGGING INFO</strong></p>
+        <p style="margin: 0 0 5px 0;">✓ Debug UI: <strong>ENABLED</strong></p>
+        <p style="margin: 0 0 5px 0;">✓ Webcam: Periksa izin</p>
+        <p style="margin: 0 0 5px 0;">✓ Marker: HIRO (bawaan)</p>
+        <p style="margin: 0 0 5px 0;">✓ Pencahayaan: ★★★★</p>
+        <p style="margin-top: 10px; border-top: 1px solid #00FF00; padding-top: 8px; margin-bottom: 0;">
+            <a href="https://jeromeetienne.github.io/AR.js/data/images/HIRO.png" target="_blank" style="color: #00FF00; text-decoration: underline;">📥 Download HIRO Marker</a><br/>
+            Cetak: 10cm x 10cm
+        </p>
     </div>
 
     <script src="script.js"></script>
