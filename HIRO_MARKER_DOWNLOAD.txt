@@ -1,0 +1,154 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                    🎯 HIRO MARKER - DOWNLOAD INSTRUCTIONS                       ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+📥 DOWNLOAD THE HIRO MARKER IMAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The HIRO marker is the standard AR.js reference marker used for testing Augmented Reality.
+
+✅ OPTION 1: DOWNLOAD FROM DEBUG PANEL (Easiest)
+─────────────────────────────────────────────────
+1. Open: http://localhost:8000/ar.html
+2. Look at top-left corner (green debug panel)
+3. Click: "📥 Download HIRO Marker" link
+4. Save the image
+
+
+✅ OPTION 2: ALTERNATIVE DOWNLOAD LINKS
+────────────────────────────────────────
+
+Try these mirrors if one doesn't work:
+
+Link 1 (Primary):
+https://jeromeetienne.github.io/AR.js/data/images/HIRO.png
+
+Link 2 (GitHub):
+https://github.com/AR-js-org/AR.js/blob/master/aframe/examples/marker-based/nft/marker-nft.png
+
+Link 3 (CDN):
+https://cdn.jsdelivr.net/npm/ar.js@3/data/images/HIRO.png
+
+Link 4 (Direct Image):
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj7gVeqq9V5Yz0Z8vZq7X3KQW0KWQxKQxKQw&s
+
+Link 5 (Wikimedia):
+https://commons.wikimedia.org/wiki/File:HIRO_Marker.svg
+
+
+✅ OPTION 3: CREATE HIRO MARKER YOURSELF
+─────────────────────────────────────────
+
+HIRO Marker Specifications:
+- 16x16 grid pattern
+- Black and white
+- Square shape
+- Distinctive corners
+
+How to create:
+1. Open Paint / Photoshop / GIMP
+2. Create 200x200 pixel image
+3. Fill with black (#000000)
+4. Copy pattern from: https://github.com/AR-js-org/AR.js/blob/master/data/images/HIRO.png
+5. Or use generator: https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 PRINT SPECIFICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Size:              10cm x 10cm (minimum - RECOMMENDED)
+Alternative:       15cm x 15cm (better for distance)
+Maximum:           30cm x 30cm (beyond this, detection may fail)
+
+DPI:               300 DPI (minimum for quality)
+Color Mode:        Full Color or B&W (both work)
+Paper Type:        Glossy or Matte (NOT tissue)
+Finish:            Laminated recommended (durability)
+
+Positioning:       Keep square (not rotated/skewed)
+Lighting:          Well-lit (no harsh shadows)
+Distance:          20-50cm from camera (optimal)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🖨️ PRINT INSTRUCTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Windows:
+1. Download image (HIRO.png)
+2. Right-click → Open with → Photos or Paint
+3. Print (Ctrl+P)
+4. Set size to 10cm x 10cm
+5. Quality: Best/Highest
+6. Print
+
+Mac:
+1. Download image
+2. Open with Preview
+3. Print (Cmd+P)
+4. Set size to 10cm x 10cm
+5. Print
+
+Linux:
+1. Download image
+2. Open with Image Viewer
+3. Print (Ctrl+P)
+4. Set size to 10cm x 10cm
+5. Print
+
+Online Printer:
+1. Upload to online service (Canva, PrintNinja, etc)
+2. Set size: 10cm x 10cm
+3. Quality: Best
+4. Order print
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ VERIFICATION CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Before using marker, verify:
+
+☑ Marker image downloaded: ______
+☑ Image is HIRO (distinctive pattern): ______
+☑ Printed on paper: ______
+☑ Size is 10cm x 10cm: ______
+☑ Quality is good (not pixelated): ______
+☑ Paper flat (not wrinkled): ______
+☑ Good lighting available: ______
+☑ Webcam ready: ______
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 READY TO TEST?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Once you have the HIRO marker printed:
+
+1. Start server:
+   npm run start
+
+2. Open browser:
+   http://localhost:8000/ar.html
+
+3. Allow camera permission
+
+4. Show HIRO marker to camera
+
+5. See 3D components appear! ✅
+
+
+Questions? Check:
+- QUICK_FIX_MARKER.md
+- TROUBLESHOOTING_MARKER.md
+- VERIFICATION_CHECKLIST.md
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Good luck! 🎯✨
