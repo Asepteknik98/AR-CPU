@@ -1,0 +1,24 @@
+Placeholder untuk file marker pattern
+Ekstensi: .patt
+
+INSTRUKSI:
+1. Generate marker custom dari:
+   https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html
+
+2. Upload gambar marker (PNG/JPG)
+   - Ukuran: 512x512 atau lebih
+   - Kontras tinggi
+   - Tidak ada background kompleks
+
+3. Download file .patt
+4. Ganti file ini dengan file .patt yang di-generate
+
+ATAU gunakan preset marker bawaan:
+- HIRO marker
+- KANJI marker
+
+TIPS:
+- Marker harus jelas dan mudah dikenali
+- Ukuran print ideal: 10-15cm
+- Gunakan glossy paper atau laminate
+- Hindari refleksi pada marker

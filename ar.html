@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AR CPU - Augmented Reality View</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="libs/aframe.min.js"></script>
+    <script src="libs/arjs.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    
+    <!-- AR Scene -->
+    <a-scene 
+        embedded 
+        arjs="detectionMode: mono; debugUIEnabled: false; sourceType: webcam; patternRatio: 0.8;" 
+        id="arScene"
+        vr-mode-ui="enabled: false">
+        
+        <!-- Camera -->
+        <a-camera position="0 0 0" look-controls wasd-controls="fly: true"></a-camera>
+
+        <!-- Marker -->
+        <a-marker 
+            preset="custom" 
+            type="pattern" 
+            url="marker/marker.patt"
+            raycaster="objects: .clickable"
+            emitevents="true"
+            id="markerA">
+            
+            <!-- Group untuk semua komponen -->
+            <a-entity id="componentsGroup" position="0 0 0">
+                
+                <!-- Motherboard -->
+                <a-entity 
+                    id="motherboard"
+                    gltf-model="assets/motherboard.glb"
+                    position="0 0 0"
+                    scale="1 1 1"
+                    rotation="0 0 0"
+                    class="clickable component"
+                    data-name="Motherboard"
+                    data-desc="Papan sirkuit utama yang menghubungkan semua komponen">
+                </a-entity>
+
+                <!-- Processor -->
+                <a-entity 
+                    id="processor"
+                    gltf-model="assets/processor.glb"
+                    position="0 0.3 -0.5"
+                    scale="0.8 0.8 0.8"
+                    rotation="0 0 0"
+                    class="clickable component"
+                    data-name="CPU (Processor)"
+                    data-desc="Otak komputer yang menjalankan semua instruksi">
+                </a-entity>
+
+                <!-- RAM -->
+                <a-entity 
+                    id="ram"
+                    gltf-model="assets/ram.glb"
+                    position="-0.3 0.25 0.3"
+                    scale="0.7 0.7 0.7"
+                    rotation="0 0 0"
+                    class="clickable component"
+                    data-name="RAM"
+                    data-desc="Memori akses cepat untuk proses berjalan">
+                </a-entity>
+
+                <!-- GPU/VGA -->
+                <a-entity 
+                    id="gpu"
+                    gltf-model="assets/vga.glb"
+                    position="0.3 0.25 0.3"
+                    scale="0.6 0.6 0.6"
+                    rotation="0 0 0"
+                    class="clickable component"
+                    data-name="GPU (VGA Card)"
+                    data-desc="Kartu grafis untuk rendering visual dan gaming">
+                </a-entity>
+
+                <!-- Power Supply -->
+                <a-entity 
+                    id="psu"
+                    gltf-model="assets/psu.glb"
+                    position="0 -0.3 0.2"
+                    scale="0.5 0.5 0.5"
+                    rotation="0 0 0"
+                    class="clickable component"
+                    data-name="PSU (Power Supply)"
+                    data-desc="Menyediakan tenaga listrik untuk semua komponen">
+                </a-entity>
+
+                <!-- SSD -->
+                <a-entity 
+                    id="ssd"
+                    gltf-model="assets/ssd.glb"
+                    position="-0.4 0.1 -0.2"
+                    scale="0.5 0.5 0.5"
+                    rotation="0 0 0"
+                    class="clickable component"
+                    data-name="SSD Storage"
+                    data-desc="Penyimpanan cepat untuk sistem dan data">
+                </a-entity>
+
+                <!-- HDD -->
+                <a-entity 
+                    id="hdd"
+                    gltf-model="assets/hdd.glb"
+                    position="0.4 0.1 -0.2"
+                    scale="0.5 0.5 0.5"
+                    rotation="0 0 0"
+                    class="clickable component"
+                    data-name="HDD Storage"
+                    data-desc="Penyimpanan kapasitas besar dengan kecepatan lebih lambat">
+                </a-entity>
+
+                <!-- Heatsink/Fan -->
+                <a-entity 
+                    id="heatsink"
+                    gltf-model="assets/heatsink_fan.glb"
+                    position="0 0.5 0"
+                    scale="0.7 0.7 0.7"
+                    rotation="0 0 0"
+                    class="clickable component"
+                    data-name="Heatsink & Fan"
+                    data-desc="Sistem pendingin untuk CPU dan GPU">
+                </a-entity>
+
+                <!-- CPU Socket -->
+                <a-entity 
+                    id="cpuSocket"
+                    gltf-model="assets/cpu_socket.glb"
+                    position="0 -0.1 0.1"
+                    scale="0.6 0.6 0.6"
+                    rotation="0 0 0"
+                    class="clickable component"
+                    data-name="CPU Socket"
+                    data-desc="Socket penempatan untuk prosesor">
+                </a-entity>
+
+                <!-- Chipset -->
+                <a-entity 
+                    id="chipset"
+                    gltf-model="assets/chipset.glb"
+                    position="-0.2 -0.2 0.2"
+                    scale="0.5 0.5 0.5"
+                    rotation="0 0 0"
+                    class="clickable component"
+                    data-name="Chipset"
+                    data-desc="Mengatur komunikasi antara CPU dan perangkat lainnya">
+                </a-entity>
+            </a-entity>
+
+        </a-marker>
+
+        <!-- Fallback plane jika marker tidak terdeteksi -->
+        <a-plane 
+            position="0 0 -4" 
+            rotation="-90 0 0" 
+            width="4" 
+            height="4" 
+            color="#7BC8A4"
+            opacity="0.3">
+        </a-plane>
+        
+        <a-sky color="#87CEEB"></a-sky>
+
+    </a-scene>
+
+    <!-- Info Panel -->
+    <div id="infoPanel" class="info-panel hidden">
+        <div class="info-header">
+            <h3 id="componentName">Component Name</h3>
+            <button id="closeInfo" class="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="info-body">
+            <p id="componentDesc">Component description will appear here</p>
+        </div>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <div class="control-group">
+            <button id="btnReset" class="control-btn" title="Reset View">
+                <i class="fas fa-redo"></i>
+            </button>
+            <button id="btnZoomIn" class="control-btn" title="Zoom In">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button id="btnZoomOut" class="control-btn" title="Zoom Out">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+        <div class="control-group">
+            <button id="btnToggleLabels" class="control-btn" title="Toggle Labels">
+                <i class="fas fa-tags"></i>
+            </button>
+            <button id="btnHome" class="control-btn" title="Back to Home">
+                <i class="fas fa-home"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-indicator">
+        <div class="spinner"></div>
+        <p>Inisialisasi AR...</p>
+    </div>
+
+    <!-- Instruction Panel -->
+    <div class="instruction-panel">
+        <div class="instruction-content">
+            <i class="fas fa-lightbulb"></i>
+            <p>Arahkan kamera ke marker untuk melihat komponen 3D</p>
+            <button id="dismissInstruction" class="btn-dismiss">Mengerti</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

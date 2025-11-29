@@ -1,0 +1,98 @@
+# Git Ignore File untuk AR CPU Project
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+.directory
+*.swp
+*.swo
+*~
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.env.local
+.env.*.local
+
+# Node & npm
+node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+
+# Build & Dist
+dist/
+build/
+*.min.js
+*.min.css
+.next/
+.nuxt/
+out/
+
+# Dependencies
+vendor/
+bower_components/
+
+# Logs
+logs/
+*.log
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
+# OS Specific
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Project Specific
+*.psd
+*.ai
+.cache/
+.session/
+
+# Development
+.env
+.env.local
+.env.*.local
+
+# Documentation
+*.docx
+*.pdf
+old_docs/
+
+# Models (too large, use CDN or store separately)
+# assets/*.glb - Uncomment if storing GLB files elsewhere
+
+# Credentials & Secrets
+.credentials
+.secrets
+*.key
+*.pem
+
+# Analytics & Tracking
+analytics.json
+tracking.json
+
+# Deploy related
+deploy_key
+.firebase/
+.netlify/
+.vercel/
+
+# Package Manager
+pnpm-lock.yaml

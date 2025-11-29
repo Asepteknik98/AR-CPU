@@ -1,0 +1,186 @@
+{
+  "projectName": "AR CPU - Augmented Reality Komponen Komputer",
+  "version": "1.0.0",
+  "description": "Aplikasi pembelajaran interaktif untuk visualisasi komponen komputer menggunakan teknologi Augmented Reality",
+  "author": "AR CPU Development Team",
+  "license": "MIT",
+  
+  "technologies": {
+    "frontend": ["HTML5", "CSS3", "JavaScript ES6+"],
+    "ar": ["A-Frame", "AR.js"],
+    "graphics": ["Three.js", "WebGL"],
+    "assets": ["GLB/GLTF", "PNG", "PATT"],
+    "ui": ["FontAwesome Icons", "Responsive Design"]
+  },
+
+  "features": [
+    "Marker-based AR visualization",
+    "3D component models",
+    "Interactive controls",
+    "Responsive design",
+    "Mobile compatible",
+    "Performance optimized",
+    "Educational content",
+    "Multiple components support"
+  ],
+
+  "components": {
+    "mainComponents": 6,
+    "supportingComponents": 12,
+    "totalComponents": 18,
+    "list": [
+      "Motherboard",
+      "CPU/Processor",
+      "RAM Memory",
+      "GPU/VGA Card",
+      "Power Supply (PSU)",
+      "Storage (SSD/HDD)",
+      "Heatsink & Fan",
+      "CPU Socket",
+      "Chipset",
+      "CMOS Battery",
+      "BIOS Chip",
+      "PCIe Slot",
+      "VRM (Voltage Regulator)",
+      "Capacitor & Resistor",
+      "PC Casing",
+      "Case Fan",
+      "Power Cables",
+      "Front Panel IO"
+    ]
+  },
+
+  "files": {
+    "html": ["index.html", "ar.html"],
+    "styles": ["style.css"],
+    "scripts": ["script.js"],
+    "documentation": [
+      "readme.md",
+      "setup-guide.md",
+      "QUICKSTART.md",
+      "TECHNICAL.md",
+      "INDEX.md",
+      "MARKER_GUIDE.md"
+    ],
+    "assets": {
+      "models": 19,
+      "location": "assets/",
+      "format": "GLB"
+    },
+    "marker": {
+      "pattern": "marker.patt",
+      "preview": "marker.png",
+      "location": "marker/"
+    },
+    "libraries": {
+      "aframe": "libs/aframe.min.js",
+      "arjs": "libs/arjs.min.js"
+    }
+  },
+
+  "configuration": {
+    "server": {
+      "port": 8000,
+      "host": "localhost",
+      "protocol": "http/https"
+    },
+    "ar": {
+      "detectionMode": "mono",
+      "sourceType": "webcam",
+      "patternRatio": 0.8,
+      "debugUI": false
+    },
+    "camera": {
+      "permission": "required",
+      "quality": "high",
+      "facing": "environment"
+    }
+  },
+
+  "browsers": {
+    "recommended": ["Chrome", "Firefox", "Safari"],
+    "supported": ["Edge", "Opera"],
+    "notSupported": ["IE11"]
+  },
+
+  "devices": {
+    "mobile": ["iOS 11+", "Android 7+"],
+    "desktop": ["Windows 10+", "macOS 10.12+", "Linux"],
+    "tablets": ["iPad 5+", "Android Tablets"]
+  },
+
+  "performance": {
+    "targetFPS": 60,
+    "maxLoadTime": "3s",
+    "maxARInitTime": "2s",
+    "modelMaxSize": "10MB",
+    "totalProjectSize": "~50MB"
+  },
+
+  "resources": {
+    "documentation": [
+      "https://aframe.io/docs/",
+      "https://ar-js-org.github.io/AR.js-Docs/",
+      "https://threejs.org/docs/",
+      "https://webglfundamentals.org/"
+    ],
+    "tools": [
+      "https://sketchfab.com/",
+      "https://www.babylonjs-playground.com/",
+      "https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html"
+    ],
+    "communities": [
+      "https://github.com/AR-js-org/AR.js",
+      "https://aframe.io/community/",
+      "https://discord.gg/Jt5pfvx"
+    ]
+  },
+
+  "deployment": {
+    "options": ["Netlify", "Vercel", "GitHub Pages", "Custom VPS"],
+    "requirements": [
+      "HTTPS for camera access",
+      "CORS properly configured",
+      "Static file serving",
+      "CDN support (optional)"
+    ]
+  },
+
+  "security": {
+    "ssl": "required",
+    "cors": "configured",
+    "csp": "enabled",
+    "privacy": "no user data collection"
+  },
+
+  "roadmap": {
+    "completed": [
+      "Home page",
+      "AR viewer",
+      "18 components",
+      "Responsive design",
+      "Full documentation"
+    ],
+    "planned": [
+      "Multiple markers",
+      "Physics simulation",
+      "Quiz/assessment",
+      "VR mode",
+      "Multi-language",
+      "Offline support"
+    ]
+  },
+
+  "support": {
+    "email": "support@ar-cpu.dev",
+    "twitter": "@arcpu_dev",
+    "github": "github.com/your-username/ar-cpu",
+    "website": "ar-cpu.dev"
+  },
+
+  "credits": {
+    "frameworks": ["A-Frame", "AR.js", "Three.js"],
+    "libraries": ["FontAwesome"],
+    "communities": ["Mozilla VR", "AR-js-org", "WebXR Community"]
+  }
+}
